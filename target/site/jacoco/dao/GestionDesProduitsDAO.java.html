@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GestionDesProduitsDAO.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">gestion_du_stock</a> &gt; <a href="index.source.html" class="el_package">dao</a> &gt; <span class="el_source">GestionDesProduitsDAO.java</span></div><h1>GestionDesProduitsDAO.java</h1><pre class="source lang-java linenums">package dao;
+
+import java.util.*;
+import java.sql.*;
+import entite.Produit;
+
+
+<span class="nc" id="L8">public class GestionDesProduitsDAO {</span>
+
+    public static ArrayList&lt;Produit&gt; getAll()throws 
+             ClassNotFoundException {
+        try {
+        
+<span class="fc" id="L14">             PreparedStatement pt = DAO.getInstance().prepareStatement(&quot;SELECT p.* ,c.nom FROM `produit` p INNER JOIN `categorie` c ON p.idCategorie=c.idCategorie;&quot;);</span>
+<span class="fc" id="L15">             ResultSet rs = pt.executeQuery();</span>
+<span class="fc" id="L16">             ArrayList&lt;Produit&gt; tabProduit = new ArrayList();</span>
+<span class="fc bfc" id="L17" title="All 2 branches covered.">             while(rs.next()){</span>
+                  
+<span class="fc" id="L19">                 tabProduit.add(new Produit(</span>
+<span class="fc" id="L20">                 rs.getInt(1),</span>
+<span class="fc" id="L21">                         rs.getString(2),</span>
+<span class="fc" id="L22">                         rs.getString(3),</span>
+<span class="fc" id="L23">                         rs.getFloat(4),</span>
+<span class="fc" id="L24">                         rs.getInt(5),</span>
+<span class="fc" id="L25">                         rs.getInt(6),</span>
+<span class="fc" id="L26">                          rs.getString(7)</span>
+                        
+                 ));
+             }
+<span class="fc" id="L30">             return tabProduit;</span>
+<span class="nc" id="L31">        } catch (SQLException e) {</span>
+<span class="nc" id="L32">            return null;</span>
+        }
+    }
+     public static ArrayList&lt;Produit&gt; getByCat(String cat)throws 
+             ClassNotFoundException {
+        try {
+        
+<span class="fc" id="L39">             PreparedStatement pt = DAO.getInstance().prepareStatement(&quot;SELECT p.* ,c.nom FROM `produit` p INNER JOIN `categorie` c ON p.idCategorie=c.idCategorie WHERE LOWER(c.`nom`) LIKE LOWER(?) ;&quot;);</span>
+<span class="fc" id="L40">             pt.setString(1, cat +'%');</span>
+<span class="fc" id="L41">             ResultSet rs = pt.executeQuery();</span>
+<span class="fc" id="L42">             ArrayList&lt;Produit&gt; tabProduit = new ArrayList();</span>
+<span class="fc bfc" id="L43" title="All 2 branches covered.">             while(rs.next()){</span>
+                  
+<span class="fc" id="L45">                 tabProduit.add(new Produit(</span>
+<span class="fc" id="L46">                 rs.getInt(1),</span>
+<span class="fc" id="L47">                         rs.getString(2),</span>
+<span class="fc" id="L48">                         rs.getString(3),</span>
+<span class="fc" id="L49">                         rs.getFloat(4),</span>
+<span class="fc" id="L50">                         rs.getInt(5),</span>
+<span class="fc" id="L51">                         rs.getInt(6),</span>
+<span class="fc" id="L52">                          rs.getString(7)</span>
+                        
+                 ));
+             }
+<span class="fc" id="L56">             return tabProduit;</span>
+<span class="nc" id="L57">        } catch (SQLException e) {</span>
+<span class="nc" id="L58">            return null;</span>
+        }
+    }
+     public static ArrayList&lt;Produit&gt; getCategorie() throws ClassNotFoundException{
+         try {
+<span class="fc" id="L63">                          PreparedStatement pt = DAO.getInstance().prepareStatement(&quot;SELECT * FROM categorie&quot;);</span>
+<span class="fc" id="L64">                          ResultSet rs = pt.executeQuery();</span>
+<span class="fc" id="L65">             ArrayList&lt;Produit&gt; tabProduit = new ArrayList();</span>
+<span class="fc bfc" id="L66" title="All 2 branches covered.">             while(rs.next()){</span>
+                  
+<span class="fc" id="L68">                 tabProduit.add(new Produit(</span>
+<span class="fc" id="L69">                 rs.getInt(1),</span>
+<span class="fc" id="L70">                         rs.getString(2)      </span>
+                 ));
+             }
+<span class="fc" id="L73">             return tabProduit;</span>
+<span class="nc" id="L74">         } catch (SQLException e) {</span>
+<span class="nc" id="L75">             return null;</span>
+         }
+     }
+     public static ArrayList&lt;Produit&gt; getProduit() throws ClassNotFoundException{
+         try {
+<span class="nc" id="L80">              PreparedStatement pt = DAO.getInstance().prepareStatement(&quot;SELECT * FROM produit&quot;);</span>
+<span class="nc" id="L81">                          ResultSet rs = pt.executeQuery();</span>
+<span class="nc" id="L82">             ArrayList&lt;Produit&gt; tabProduit = new ArrayList();</span>
+<span class="nc bnc" id="L83" title="All 2 branches missed.">             while(rs.next()){</span>
+                  
+<span class="nc" id="L85">                 tabProduit.add(new Produit(</span>
+<span class="nc" id="L86">                 rs.getInt(1),</span>
+<span class="nc" id="L87">                         rs.getString(2),</span>
+<span class="nc" id="L88">                          rs.getFloat(4)</span>
+                 ));
+             }
+<span class="nc" id="L91">             return tabProduit;</span>
+<span class="nc" id="L92">         } catch (SQLException e) {</span>
+<span class="nc" id="L93">                 return null;</span>
+         }
+   
+     }
+     
+     public static boolean ajouterProduit(String nom,String description,float prix ,int qt,int idCat) throws ClassNotFoundException{
+         try {
+<span class="fc" id="L100">            PreparedStatement pt = DAO.getInstance().prepareStatement(&quot;INSERT INTO `produit` (`idProduit`, `nom`, `description`, `prix`, `quantiteEnStock`, `idCategorie`) VALUES (NULL, ? , ?, ?, ?, ?)&quot;);</span>
+<span class="fc" id="L101">            pt.setString(1,nom);</span>
+<span class="fc" id="L102">            pt.setString(2,description);</span>
+<span class="fc" id="L103">            pt.setFloat(3, prix);</span>
+<span class="fc" id="L104">            pt.setInt(4, qt);</span>
+<span class="fc" id="L105">            pt.setInt(5, idCat);</span>
+<span class="fc" id="L106">            pt.executeUpdate();</span>
+<span class="pc" id="L107">return true;         } catch (SQLException e) {</span>
+<span class="nc" id="L108">             System.out.println(e.getMessage());</span>
+<span class="nc" id="L109">             return false;</span>
+         }
+     }
+     public static boolean ModifierProduit(int idProduit,String nom,String description,float prix ,int qt,int idCat) throws ClassNotFoundException{
+         try {
+<span class="fc" id="L114">    PreparedStatement pt = DAO.getInstance().prepareStatement(&quot;UPDATE `produit` SET  `nom`= ?, `description` = ?, `prix` = ?, `quantiteEnStock` = ?, `idCategorie` = ? WHERE `idProduit` = ?&quot;);</span>
+<span class="fc" id="L115">     pt.setString(1,nom);</span>
+<span class="fc" id="L116">            pt.setString(2,description);</span>
+<span class="fc" id="L117">            pt.setFloat(3, prix);</span>
+<span class="fc" id="L118">            pt.setInt(4, qt);</span>
+<span class="fc" id="L119">            pt.setInt(5, idCat);</span>
+<span class="fc" id="L120">            pt.setInt(6, idProduit);</span>
+<span class="fc" id="L121">            pt.executeUpdate();</span>
+<span class="fc" id="L122">         return true;  </span>
+<span class="nc" id="L123">         } catch (SQLException e) {</span>
+<span class="nc" id="L124">            System.out.println(e.getMessage());        return false;</span>
+         }
+     }
+     
+     public static boolean suprimerProduit(int idProduit) throws ClassNotFoundException{
+         try {
+<span class="fc" id="L130">             PreparedStatement pt = DAO.getInstance().prepareStatement(&quot;DELETE FROM `produit` WHERE `idProduit` = ? &quot;);</span>
+<span class="fc" id="L131">             pt.setInt(1, idProduit);</span>
+<span class="fc" id="L132">             pt.executeUpdate();</span>
+<span class="fc" id="L133">                 return true;  </span>
+<span class="nc" id="L134">         } catch (SQLException e) {</span>
+<span class="nc" id="L135">          System.out.println(e.getMessage()); return false;</span>
+
+         }
+     }
+     
+  
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

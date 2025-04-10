@@ -1,0 +1,13 @@
+test\GestionDesCommandesClientsDAOTest.class
+test\AdministrateurDAOTest.class
+test\ClientTest$1.class
+test\CommandeClientTest.class
+test\ProduitTest.class
+test\GestiondesCommandesFournisseursDAOTest.class
+test\ClientTest.class
+test\GestionDesProduitsDAOTest.class
+test\DAOTest.class
+test\GérerLesClientsDAOTest.class
+test\GérerLesFoumisseursDAOTest.class
+test\CommandeFournisseursTest.class
+test\FournisseurTest.class

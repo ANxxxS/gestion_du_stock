@@ -1,0 +1,38 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+gestion_du_stock,view,Login,671,0,2,0,151,0,7,0,6,0
+gestion_du_stock,view,AdminDashboard.new Runnable() {...},9,0,0,0,3,0,2,0,2,0
+gestion_du_stock,view,AdminDashboard.new ActionListener() {...},41,0,4,0,9,0,4,0,2,0
+gestion_du_stock,view,AdminDashboard.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+gestion_du_stock,view,AdminDashboard.new DefaultTableModel() {...},41,0,0,0,3,0,2,0,2,0
+gestion_du_stock,view,Login.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+gestion_du_stock,view,AdminDashboard.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+gestion_du_stock,view,Login.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+gestion_du_stock,view,AdminDashboard.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+gestion_du_stock,view,AdminDashboard.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+gestion_du_stock,view,AdminDashboard.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+gestion_du_stock,view,AdminDashboard.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+gestion_du_stock,view,AdminDashboard.new KeyAdapter() {...},11,0,0,0,3,0,2,0,2,0
+gestion_du_stock,view,AdminDashboard.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+gestion_du_stock,view,AdminDashboard.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+gestion_du_stock,view,AdminDashboard.new DefaultTableModel() {...},33,0,0,0,3,0,2,0,2,0
+gestion_du_stock,view,AdminDashboard.new DefaultTableModel() {...},37,0,0,0,3,0,2,0,2,0
+gestion_du_stock,view,AdminDashboard.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+gestion_du_stock,view,AdminDashboard.new ActionListener() {...},41,0,4,0,9,0,4,0,2,0
+gestion_du_stock,view,AdminDashboard,5768,0,84,0,1196,0,79,0,37,0
+gestion_du_stock,view,AdminDashboard.new DefaultTableModel() {...},33,0,0,0,3,0,2,0,2,0
+gestion_du_stock,view,AdminDashboard.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+gestion_du_stock,view,AdminDashboard.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+gestion_du_stock,view,AdminDashboard.new DefaultTableModel() {...},33,0,0,0,3,0,2,0,2,0
+gestion_du_stock,view,AdminDashboard.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+gestion_du_stock,entite,Fournisseur,0,52,0,0,0,22,0,10,0,10
+gestion_du_stock,entite,CommandeFournisseurs,0,53,0,0,0,22,0,11,0,11
+gestion_du_stock,entite,CommandeClient,0,53,0,0,0,22,0,11,0,11
+gestion_du_stock,entite,Client,3,62,0,0,1,26,1,12,1,12
+gestion_du_stock,entite,Produit,0,94,0,0,0,39,0,17,0,17
+gestion_du_stock,dao,GérerLesFoumisseursDAO,15,102,0,6,9,22,1,7,1,4
+gestion_du_stock,dao,DAO,83,56,20,12,32,17,15,7,2,4
+gestion_du_stock,dao,GestiondesCommandesFournisseursDAO,12,120,2,4,5,37,3,3,1,2
+gestion_du_stock,dao,GestionDesProduitsDAO,68,197,2,6,24,56,3,9,2,6
+gestion_du_stock,dao,GestionDesCommandesClientsDAO,14,122,2,4,6,34,3,3,1,2
+gestion_du_stock,dao,GérerLesClientsDAO,27,117,0,6,12,27,1,7,1,4
+gestion_du_stock,dao,AdministrateurDAO,6,25,0,0,3,9,1,1,1,1

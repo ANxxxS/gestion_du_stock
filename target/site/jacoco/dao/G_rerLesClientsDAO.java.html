@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GérerLesClientsDAO.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">gestion_du_stock</a> &gt; <a href="index.source.html" class="el_package">dao</a> &gt; <span class="el_source">GérerLesClientsDAO.java</span></div><h1>GérerLesClientsDAO.java</h1><pre class="source lang-java linenums">package dao;
+import java.util.*;
+import entite.Client;
+import java.sql.*;
+
+<span class="nc" id="L6">public class GérerLesClientsDAO {</span>
+   public static boolean ajouterClient(String nom,String adresse,String tele,String email){
+       try {
+<span class="fc" id="L9">           PreparedStatement pt = DAO.getInstance().prepareStatement(&quot;INSERT INTO `client` ( `nom`, `adresse`, `téléphone`, `email`) VALUES ( ?, ?, ? , ?)&quot;);</span>
+<span class="fc" id="L10">           pt.setString(1, nom);</span>
+<span class="fc" id="L11">           pt.setString(2, adresse);</span>
+<span class="fc" id="L12">           pt.setString(3, tele);</span>
+<span class="fc" id="L13">           pt.setString(4, email);</span>
+<span class="fc" id="L14">           pt.executeUpdate();</span>
+<span class="fc" id="L15">           return true;</span>
+
+<span class="nc" id="L17">       } catch (SQLException e) {</span>
+<span class="nc" id="L18">            System.out.println(e.getMessage());</span>
+<span class="nc" id="L19">           return false;</span>
+       }
+   }
+  public static boolean suprimer(int idClient) {
+    try {
+<span class="fc" id="L24">        PreparedStatement pt = DAO.getInstance().prepareStatement(</span>
+            &quot;DELETE FROM `client` WHERE `idClient` = ?&quot;
+        );
+<span class="fc" id="L27">        pt.setInt(1, idClient);</span>
+<span class="fc" id="L28">        int lignesModifiées = pt.executeUpdate();</span>
+<span class="fc bfc" id="L29" title="All 2 branches covered.">        return lignesModifiées &gt; 0;</span>
+<span class="nc" id="L30">    } catch (SQLException e) {</span>
+<span class="nc" id="L31">        System.out.println(e.getMessage());</span>
+<span class="nc" id="L32">        return false;</span>
+    }
+}
+
+  public static  ArrayList&lt;Client&gt; getAll(){
+      try {
+<span class="fc" id="L38">          PreparedStatement pt = DAO.getInstance().prepareStatement(&quot;SELECT * FROM `client`&quot;);</span>
+<span class="fc" id="L39">          ArrayList&lt;Client&gt; tab =new ArrayList();</span>
+<span class="fc" id="L40">          ResultSet rs = pt.executeQuery();</span>
+<span class="fc bfc" id="L41" title="All 2 branches covered.">          while(rs.next()){</span>
+<span class="fc" id="L42">              tab.add(new Client(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5)));</span>
+          }
+<span class="fc" id="L44">          return tab;</span>
+<span class="nc" id="L45">      } catch (SQLException e) {</span>
+          
+<span class="nc" id="L47">            System.out.println(e.getMessage());</span>
+<span class="nc" id="L48">            return null;</span>
+            
+      }
+  }
+  public static ArrayList&lt;Client&gt; getClient() {
+<span class="fc" id="L53">    ArrayList&lt;Client&gt; tab = new ArrayList&lt;&gt;();</span>
+    try {
+<span class="fc" id="L55">        PreparedStatement pt = DAO.getInstance().prepareStatement(&quot;SELECT * FROM client&quot;);</span>
+<span class="fc" id="L56">        ResultSet rs = pt.executeQuery();</span>
+        
+<span class="fc bfc" id="L58" title="All 2 branches covered.">        while (rs.next()) {</span>
+<span class="fc" id="L59">            Client c = new Client(rs.getInt(&quot;idClient&quot;), rs.getString(&quot;nom&quot;));</span>
+<span class="fc" id="L60">            System.out.println(&quot;Ajout du client : &quot; + c.getNom());</span>
+<span class="fc" id="L61">            tab.add(c);</span>
+<span class="fc" id="L62">        }</span>
+<span class="nc" id="L63">    } catch (SQLException e) {</span>
+<span class="nc" id="L64">        e.printStackTrace();</span>
+<span class="fc" id="L65">    }</span>
+<span class="fc" id="L66">    return tab;</span>
+}
+
+ 
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

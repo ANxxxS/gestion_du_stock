@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: test.GestionDesProduitsDAOTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.026 s -- in test.GestionDesProduitsDAOTest

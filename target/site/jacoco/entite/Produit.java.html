@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Produit.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">gestion_du_stock</a> &gt; <a href="index.source.html" class="el_package">entite</a> &gt; <span class="el_source">Produit.java</span></div><h1>Produit.java</h1><pre class="source lang-java linenums">package entite;
+
+
+public class Produit {
+    
+private int idProduit;
+private String nomProduit;
+private String description;
+private float prix;
+private int quantiteEnStock;
+private int idCategorie;
+private String nomCategorie;
+
+<span class="fc" id="L14">    public Produit(int idProduit, String nomProduit, float prix) {</span>
+<span class="fc" id="L15">        this.idProduit = idProduit;</span>
+<span class="fc" id="L16">        this.nomProduit = nomProduit;</span>
+<span class="fc" id="L17">        this.prix=prix;</span>
+<span class="fc" id="L18">    }</span>
+<span class="fc" id="L19">  public Produit(int idCategorie, String nomCategorie) {</span>
+<span class="fc" id="L20">        this.idCategorie = idCategorie;</span>
+<span class="fc" id="L21">        this.nomCategorie = nomCategorie;</span>
+       
+<span class="fc" id="L23">    }</span>
+
+
+<span class="fc" id="L26">    public Produit(int idProduit, String nomProduit, String description, float prix, int quantiteEnStock, int idCategorie, String nomCategorie) {</span>
+<span class="fc" id="L27">        this.idProduit = idProduit;</span>
+<span class="fc" id="L28">        this.nomProduit = nomProduit;</span>
+<span class="fc" id="L29">        this.description = description;</span>
+<span class="fc" id="L30">        this.prix = prix;</span>
+<span class="fc" id="L31">        this.quantiteEnStock = quantiteEnStock;</span>
+<span class="fc" id="L32">        this.idCategorie = idCategorie;</span>
+<span class="fc" id="L33">        this.nomCategorie = nomCategorie;</span>
+<span class="fc" id="L34">    }</span>
+
+    public int getIdProduit() {
+<span class="fc" id="L37">        return idProduit;</span>
+    }
+
+    public String getNomProduit() {
+<span class="fc" id="L41">        return nomProduit;</span>
+    }
+
+    public String getDescription() {
+<span class="fc" id="L45">        return description;</span>
+    }
+
+    public float getPrix() {
+<span class="fc" id="L49">        return prix;</span>
+    }
+
+    public int getQuantiteEnStock() {
+<span class="fc" id="L53">        return quantiteEnStock;</span>
+    }
+
+    public int getIdCategorie() {
+<span class="fc" id="L57">        return idCategorie;</span>
+    }
+
+    public String getNomCategorie() {
+<span class="fc" id="L61">        return nomCategorie;</span>
+    }
+
+    public void setIdProduit(int idProduit) {
+<span class="fc" id="L65">        this.idProduit = idProduit;</span>
+<span class="fc" id="L66">    }</span>
+
+    public void setNomProduit(String nomProduit) {
+<span class="fc" id="L69">        this.nomProduit = nomProduit;</span>
+<span class="fc" id="L70">    }</span>
+
+    public void setDescription(String description) {
+<span class="fc" id="L73">        this.description = description;</span>
+<span class="fc" id="L74">    }</span>
+
+    public void setPrix(float prix) {
+<span class="fc" id="L77">        this.prix = prix;</span>
+<span class="fc" id="L78">    }</span>
+
+    public void setQuantiteEnStock(int quantiteEnStock) {
+<span class="fc" id="L81">        this.quantiteEnStock = quantiteEnStock;</span>
+<span class="fc" id="L82">    }</span>
+
+    public void setIdCategorie(int idCategorie) {
+<span class="fc" id="L85">        this.idCategorie = idCategorie;</span>
+<span class="fc" id="L86">    }</span>
+
+    public void setNomCategorie(String nomCategorie) {
+<span class="fc" id="L89">        this.nomCategorie = nomCategorie;</span>
+<span class="fc" id="L90">    }</span>
+
+  
+
+   
+    
+   
+
+   
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

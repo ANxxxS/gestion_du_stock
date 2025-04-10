@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Login.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">gestion_du_stock</a> &gt; <a href="index.source.html" class="el_package">view</a> &gt; <span class="el_source">Login.java</span></div><h1>Login.java</h1><pre class="source lang-java linenums">package view;
+
+import dao.AdministrateurDAO;
+import static dao.AdministrateurDAO.getConnexion;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
+public class Login extends javax.swing.JFrame {
+private AdministrateurDAO  AdministrateurDAO ;
+
+<span class="nc" id="L12">    public Login() {</span>
+<span class="nc" id="L13">        initComponents();</span>
+<span class="nc" id="L14">    }</span>
+
+    @SuppressWarnings(&quot;unchecked&quot;)
+    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+<span class="nc" id="L20">        Login = new javax.swing.JPanel();</span>
+<span class="nc" id="L21">        Right = new javax.swing.JPanel();</span>
+<span class="nc" id="L22">        jLabel6 = new javax.swing.JLabel();</span>
+<span class="nc" id="L23">        jLabel7 = new javax.swing.JLabel();</span>
+<span class="nc" id="L24">        Left = new javax.swing.JPanel();</span>
+<span class="nc" id="L25">        jLabel1 = new javax.swing.JLabel();</span>
+<span class="nc" id="L26">        jLabel2 = new javax.swing.JLabel();</span>
+<span class="nc" id="L27">        jLabel3 = new javax.swing.JLabel();</span>
+<span class="nc" id="L28">        emailTXT = new javax.swing.JTextField();</span>
+<span class="nc" id="L29">        mdpTXT = new javax.swing.JPasswordField();</span>
+<span class="nc" id="L30">        cmdLOGIN = new javax.swing.JButton();</span>
+
+<span class="nc" id="L32">        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);</span>
+
+<span class="nc" id="L34">        Login.setBackground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L35">        Login.setPreferredSize(new java.awt.Dimension(1000, 600));</span>
+
+<span class="nc" id="L37">        Right.setBackground(new java.awt.Color(0, 180, 180));</span>
+<span class="nc" id="L38">        Right.setPreferredSize(new java.awt.Dimension(500, 600));</span>
+
+<span class="nc" id="L40">        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/images/logo.jpeg.jpeg&quot;))); // NOI18N</span>
+
+<span class="nc" id="L42">        javax.swing.GroupLayout RightLayout = new javax.swing.GroupLayout(Right);</span>
+<span class="nc" id="L43">        Right.setLayout(RightLayout);</span>
+<span class="nc" id="L44">        RightLayout.setHorizontalGroup(</span>
+<span class="nc" id="L45">            RightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L46">            .addGroup(RightLayout.createSequentialGroup()</span>
+<span class="nc" id="L47">                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L48">                .addGap(279, 279, 279)</span>
+<span class="nc" id="L49">                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L50">                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
+        );
+<span class="nc" id="L52">        RightLayout.setVerticalGroup(</span>
+<span class="nc" id="L53">            RightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L54">            .addGroup(RightLayout.createSequentialGroup()</span>
+<span class="nc" id="L55">                .addGap(163, 163, 163)</span>
+<span class="nc" id="L56">                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L57">                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
+<span class="nc" id="L58">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RightLayout.createSequentialGroup()</span>
+<span class="nc" id="L59">                .addGap(0, 0, Short.MAX_VALUE)</span>
+<span class="nc" id="L60">                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+        );
+
+<span class="nc" id="L63">        Left.setBackground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L64">        Left.setPreferredSize(new java.awt.Dimension(500, 600));</span>
+
+<span class="nc" id="L66">        jLabel1.setFont(new java.awt.Font(&quot;Segoe UI&quot;, 1, 36)); // NOI18N</span>
+<span class="nc" id="L67">        jLabel1.setForeground(new java.awt.Color(0, 180, 180));</span>
+<span class="nc" id="L68">        jLabel1.setText(&quot;LOGIN&quot;);</span>
+
+<span class="nc" id="L70">        jLabel2.setFont(new java.awt.Font(&quot;Segoe UI&quot;, 0, 14)); // NOI18N</span>
+<span class="nc" id="L71">        jLabel2.setForeground(new java.awt.Color(102, 102, 102));</span>
+<span class="nc" id="L72">        jLabel2.setText(&quot;Password&quot;);</span>
+
+<span class="nc" id="L74">        jLabel3.setFont(new java.awt.Font(&quot;Segoe UI&quot;, 0, 14)); // NOI18N</span>
+<span class="nc" id="L75">        jLabel3.setForeground(new java.awt.Color(102, 102, 102));</span>
+<span class="nc" id="L76">        jLabel3.setText(&quot;Email&quot;);</span>
+
+<span class="nc" id="L78">        emailTXT.setFont(new java.awt.Font(&quot;Segoe UI&quot;, 0, 14)); // NOI18N</span>
+<span class="nc" id="L79">        emailTXT.setForeground(new java.awt.Color(102, 102, 102));</span>
+<span class="nc" id="L80">        emailTXT.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L82">                emailTXTActionPerformed(evt);</span>
+<span class="nc" id="L83">            }</span>
+        });
+
+<span class="nc" id="L86">        cmdLOGIN.setBackground(new java.awt.Color(0, 180, 180));</span>
+<span class="nc" id="L87">        cmdLOGIN.setFont(new java.awt.Font(&quot;Segoe UI&quot;, 0, 14)); // NOI18N</span>
+<span class="nc" id="L88">        cmdLOGIN.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L89">        cmdLOGIN.setText(&quot;Login&quot;);</span>
+<span class="nc" id="L90">        cmdLOGIN.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L92">                cmdLOGINActionPerformed(evt);</span>
+<span class="nc" id="L93">            }</span>
+        });
+
+<span class="nc" id="L96">        javax.swing.GroupLayout LeftLayout = new javax.swing.GroupLayout(Left);</span>
+<span class="nc" id="L97">        Left.setLayout(LeftLayout);</span>
+<span class="nc" id="L98">        LeftLayout.setHorizontalGroup(</span>
+<span class="nc" id="L99">            LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L100">            .addGroup(LeftLayout.createSequentialGroup()</span>
+<span class="nc" id="L101">                .addGroup(LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L102">                    .addGroup(LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)</span>
+<span class="nc" id="L103">                        .addComponent(emailTXT, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L104">                        .addGroup(LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L105">                            .addGroup(LeftLayout.createSequentialGroup()</span>
+<span class="nc" id="L106">                                .addGap(180, 180, 180)</span>
+<span class="nc" id="L107">                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L108">                            .addGroup(LeftLayout.createSequentialGroup()</span>
+<span class="nc" id="L109">                                .addGap(43, 43, 43)</span>
+<span class="nc" id="L110">                                .addComponent(mdpTXT, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L111">                            .addGroup(LeftLayout.createSequentialGroup()</span>
+<span class="nc" id="L112">                                .addGap(19, 19, 19)</span>
+<span class="nc" id="L113">                                .addGroup(LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L114">                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L115">                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))))</span>
+<span class="nc" id="L116">                    .addGroup(LeftLayout.createSequentialGroup()</span>
+<span class="nc" id="L117">                        .addGap(169, 169, 169)</span>
+<span class="nc" id="L118">                        .addComponent(cmdLOGIN, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))</span>
+<span class="nc" id="L119">                .addContainerGap(100, Short.MAX_VALUE))</span>
+        );
+<span class="nc" id="L121">        LeftLayout.setVerticalGroup(</span>
+<span class="nc" id="L122">            LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L123">            .addGroup(LeftLayout.createSequentialGroup()</span>
+<span class="nc" id="L124">                .addGap(64, 64, 64)</span>
+<span class="nc" id="L125">                .addComponent(jLabel1)</span>
+<span class="nc" id="L126">                .addGap(81, 81, 81)</span>
+<span class="nc" id="L127">                .addComponent(jLabel3)</span>
+<span class="nc" id="L128">                .addGap(28, 28, 28)</span>
+<span class="nc" id="L129">                .addComponent(emailTXT, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L130">                .addGap(18, 18, 18)</span>
+<span class="nc" id="L131">                .addComponent(jLabel2)</span>
+<span class="nc" id="L132">                .addGap(18, 18, 18)</span>
+<span class="nc" id="L133">                .addComponent(mdpTXT, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L134">                .addGap(41, 41, 41)</span>
+<span class="nc" id="L135">                .addComponent(cmdLOGIN, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L136">                .addContainerGap(129, Short.MAX_VALUE))</span>
+        );
+
+<span class="nc" id="L139">        javax.swing.GroupLayout LoginLayout = new javax.swing.GroupLayout(Login);</span>
+<span class="nc" id="L140">        Login.setLayout(LoginLayout);</span>
+<span class="nc" id="L141">        LoginLayout.setHorizontalGroup(</span>
+<span class="nc" id="L142">            LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L143">            .addGroup(LoginLayout.createSequentialGroup()</span>
+<span class="nc" id="L144">                .addComponent(Right, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L145">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L146">                .addComponent(Left, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L147">                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
+        );
+<span class="nc" id="L149">        LoginLayout.setVerticalGroup(</span>
+<span class="nc" id="L150">            LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L151">            .addGroup(LoginLayout.createSequentialGroup()</span>
+<span class="nc" id="L152">                .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L153">                    .addComponent(Right, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L154">                    .addComponent(Left, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L155">                .addGap(0, 0, Short.MAX_VALUE))</span>
+        );
+
+<span class="nc" id="L158">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L159">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L160">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L161">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L162">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L163">                .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L164">                .addGap(0, 0, Short.MAX_VALUE))</span>
+        );
+<span class="nc" id="L166">        layout.setVerticalGroup(</span>
+<span class="nc" id="L167">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L168">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L169">                .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L170">                .addGap(0, 0, Short.MAX_VALUE))</span>
+        );
+
+<span class="nc" id="L173">        pack();</span>
+<span class="nc" id="L174">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+
+    private void emailTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTXTActionPerformed
+   
+<span class="nc" id="L178">    }//GEN-LAST:event_emailTXTActionPerformed</span>
+
+    private void cmdLOGINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLOGINActionPerformed
+        try {
+<span class="nc" id="L182">        verifierLogin();</span>
+<span class="nc" id="L183">                } catch (ClassNotFoundException ex) {</span>
+<span class="nc" id="L184">        Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);</span>
+<span class="nc" id="L185">    }</span>
+        
+<span class="nc" id="L187">    }//GEN-LAST:event_cmdLOGINActionPerformed</span>
+
+    private void verifierLogin() throws ClassNotFoundException {
+<span class="nc" id="L190">        String email = emailTXT.getText();</span>
+<span class="nc" id="L191">        String mdp =  new String(mdpTXT.getPassword());</span>
+<span class="nc" id="L192">       AdministrateurDAO = new AdministrateurDAO();</span>
+<span class="nc bnc" id="L193" title="All 2 branches missed.">         if (AdministrateurDAO.getConnexion(email, mdp)) {</span>
+<span class="nc" id="L194">             JOptionPane.showMessageDialog(this, &quot;Connexion réussie !&quot;);</span>
+<span class="nc" id="L195">             AdminDashboard AdminDashboard= new AdminDashboard();</span>
+<span class="nc" id="L196">                     AdminDashboard.setVisible(true);</span>
+<span class="nc" id="L197">                     AdminDashboard.pack();</span>
+<span class="nc" id="L198">                     AdminDashboard.setLocationRelativeTo(null);</span>
+<span class="nc" id="L199">             this.dispose(); </span>
+<span class="nc" id="L200">         } else {</span>
+<span class="nc" id="L201">             JOptionPane.showMessageDialog(this, &quot;Identifiants incorrects !&quot;);</span>
+         }
+<span class="nc" id="L203">    }</span>
+    public static void main(String[] args){
+<span class="nc" id="L205">        Login LoginFrame = new Login();</span>
+<span class="nc" id="L206">            LoginFrame.setVisible(true);</span>
+<span class="nc" id="L207">            LoginFrame.pack();</span>
+<span class="nc" id="L208">            LoginFrame.setLocationRelativeTo(null);</span>
+<span class="nc" id="L209">    }</span>
+   
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Left;
+    private javax.swing.JPanel Login;
+    private javax.swing.JPanel Right;
+    private javax.swing.JButton cmdLOGIN;
+    private javax.swing.JTextField emailTXT;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPasswordField mdpTXT;
+    // End of variables declaration//GEN-END:variables
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
